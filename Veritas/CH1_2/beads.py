@@ -3,52 +3,52 @@ ID: oranged1
 LANG: PYTHON3
 TASK: beads
 """
-# fin = open('beads.in', 'r')
-# fout = open('beads.out', 'w')
+fin = open('beads.in', 'r')
+fout = open('beads.out', 'w')
 
-# necklace_len = int(fin.readline())
-# necklace = fin.readline()
-# print_counter = 1
-# for i in range(necklace_len):
-#     # cw
-#     cw_s = necklace[i:]+ necklace[:i]
-#     # ccw
-#     ccw_s = cw_s[::-1]
-#     counter = 0
-#     prev = 'w'
-#     for curr in cw_s:
-#         if curr == 'w':
-#             counter += 1
-#         elif prev == 'w':  # prev is w but curr is not w
-#             counter += 1
-#             prev = curr
-#         elif prev == curr:
-#             counter += 1
-#         elif prev != curr:
-#             prev = curr
-#             break
+necklace_len = int(fin.readline())
+necklace = fin.readline()
+print_counter = 1
+for i in range(necklace_len):
+    # cw
+    cw_s = necklace[i:]+ necklace[:i]
+    # ccw
+    ccw_s = cw_s[::-1]
+    counter = 0
+    prev = 'w'
+    for curr in cw_s:
+        if curr == 'w':
+            counter += 1
+        elif prev == 'w':  # prev is w but curr is not w
+            counter += 1
+            prev = curr
+        elif prev == curr:
+            counter += 1
+        elif prev != curr:
+            prev = curr
+            break
 
-#     prev2 = 'w'
-#     ccw_s = ccw_s[:necklace_len - counter]
-#     for curr in ccw_s:
-#         if curr == 'w':
-#             counter += 1
-#         elif prev2 == 'w':
-#             counter += 1
-#         elif prev2 == curr:
-#             counter += 1
-#         else:
-#             break
-#         if curr == 'w':
-#             pass
-#         elif curr != 'w':
-#             prev2 = curr      
-#     if print_counter < counter:
-#         print_counter = counter
-#     # print(i, print_counter)
+    prev2 = 'w'
+    ccw_s = ccw_s[:necklace_len - counter]
+    for curr in ccw_s:
+        if curr == 'w':
+            counter += 1
+        elif prev2 == 'w':
+            counter += 1
+        elif prev2 == curr:
+            counter += 1
+        else:
+            break
+        if curr == 'w':
+            pass
+        elif curr != 'w':
+            prev2 = curr      
+    if print_counter < counter:
+        print_counter = counter
+    # print(i, print_counter)
 
-# fout.write(str(print_counter) + '\n')
-# fout.close()
+fout.write(str(print_counter) + '\n')
+fout.close()
 
 
 """
