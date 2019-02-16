@@ -20,14 +20,14 @@ numname_list = []
 for i in given_num:
     numname_list.append(namenum_dict[int(i)])
 name_list = list(itertools.product(*numname_list))
-final_list = []
-for i in name_list:
-    final_list.append(''.join(i))
+
+for i in range(len(name_list)):
+    name_list[i] = ''.join(name_list[i])
 result_lst = []
-for name in final_list:
+for name in name_list:
     if name in accept_name:
         result_lst.append(name)
-result_lst = sorted(result_lst)
+result_lst.sort()
 if len(result_lst) > 0:
     for i in result_lst:
         fout.write(i + "\n")
