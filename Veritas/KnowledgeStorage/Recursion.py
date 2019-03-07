@@ -74,3 +74,6 @@
  "nbformat": 4,
  "nbformat_minor": 2
 }
+Number = 2103725
+Base = 16
+Result = 2019AD (The year when this was written)
