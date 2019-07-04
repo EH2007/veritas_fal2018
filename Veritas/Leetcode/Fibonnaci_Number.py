@@ -1,11 +1,16 @@
 class Solution(object):
+    cache = {}
     def fib(self, N):
-        if N == 1:
-            return 1
-        elif N == 0:
+        if N in self.cache:
+          return self.cache[N]
+        if (N == 0):
             return 0
+        elif N == 1: 
+            return 1
         else:
-            return self.fib(N - 1) + self.fib(N - 2)
+            result = self.fib(N-1) + self.fib(N-2) 
+            self.cache[N] = result
+            return result
 
 s = Solution()
 print(s.fib(4))
